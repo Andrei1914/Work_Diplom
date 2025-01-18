@@ -1,0 +1,68 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Отзывы</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'help.css' %}"">
+</head>
+<body>
+    {% include 'menu_page.html'%}
+    <div class="all_help">
+        {{ info }}
+        <h1>Все вопросы:</h1>
+        <br>
+        {% for help_message in helps %}
+            <div class="help-item">
+                <h2 class="help-user">Вопрос от: {{ help_message.user_id }}</h2>
+                <p class="help-message">Вопрос: {{ help_message.message }}</p>
+                {% if help_message.answer_message %}
+                    <p class="help-answer">Ответ от специалиста: {{ help_message.answer_message }}</p>
+                {% endif %}
+                <p class="help-date">Дата публикации: {{ help_message.date_publish }}</p>
+            </div>
+        {% empty %}
+            <p>Нет вопросов.</p>
+        {% endfor %}
+    </div>
+    <div class="form_help">
+        <h1>Задать вопрос</h1>
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">Отправить вопрос</button>
+        </form>
+        {% if form.errors %}
+            <div style="color: red;">
+                {% for field in form %}
+                    {% for error in field.errors %}
+                        <div>{{ error }}</div>
+                    {% endfor %}
+                {% endfor %}
+                {% for error in form.non_field_errors %}
+                    <div>{{ error }}</div>
+                {% endfor %}
+            </div>
+        {% endif %}
+    </div>
+    <div class="pagination">
+        <span class="step-links">
+            {% if helps.paginator.num_pages > 1 %}
+                {% if helps.has_previous %}
+                    <a href="?page=1" aria-label="Перейти на первую страницу" rel="first">&laquo; первая</a>
+                    <a href="?page={{ helps.previous_page_number }}" aria-label="Перейти на предыдущую страницу">предыдущая</a>
+                {% endif %}
+                
+                    <span class="current">
+                        Страница {{ helps.number }} из {{ helps.paginator.num_pages }}.
+                    </span>
+                
+                {% if helps.has_next %}
+                    <a href="?page={{ helps.next_page_number }}" aria-label="Перейти на следующую страницу">следующая</a>
+                    <a href="?page={{ helps.paginator.num_pages }}" aria-label="Перейти на последнюю страницу" rel="last">последняя &raquo;</a>
+                {% endif %}
+            {% endif %}
+        </span>
+    </div>
+</body>
+</html>

@@ -1,0 +1,57 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Наши работы</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'example_work.css' %}">
+</head>
+<body>
+{% include 'menu_page.html'%}
+    <div class="container_example">
+        <form method="GET" action="">
+            <label for="category">Выберите категорию:</label>
+            <select name="category" id="category" onchange="this.form.submit()">
+                <option value="{{ category }}">Все категории</option>
+                {% for category in categories %}
+                    <option value="{{ category.id }}" {% if selected_category == category.category_id %}selected{% endif %}>
+                        {{ category.name }}
+                    </option>
+                {% endfor %}
+            </select>
+        </form>
+            
+        <div class="example_work">
+            <h1>Примеры работ</h1>
+            {% for example in examples %}
+                    <h2>{{ example.title }}</h2>
+                    <p>{{ example.description }}</p>
+                    <img src="{{ MEDIA_URL }}{{ example.image.url }}" alt="{{ example.title }}">
+                    <p>Дата: {{ example.date_publish }}</p>
+            {% empty %}
+                <p>Нет примеров работ.</p>
+            {% endfor %}
+        </div>
+        <div class="pagination">
+            <span class="step-links">
+                {% if examples.paginator.num_pages > 1 %}
+                    {% if examples.has_previous %}
+                        <a href="?page=1" aria-label="Перейти на первую страницу" rel="first">&laquo; первая</a>
+                        <a href="?page={{ examples.previous_page_number }}" aria-label="Перейти на предыдущую страницу">предыдущая</a>
+                    {% endif %}
+                    
+                    <span class="current">
+                        Страница {{ examples.number }} из {{ examples.paginator.num_pages }}.
+                    </span>
+                    
+                    {% if examples.has_next %}
+                        <a href="?page={{ examples.next_page_number }}" aria-label="Перейти на следующую страницу">следующая</a>
+                        <a href="?page={{ examples.paginator.num_pages }}" aria-label="Перейти на последнюю страницу" rel="last">последняя &raquo;</a>
+                    {% endif %}
+                {% endif %}
+            </span>
+        </div>
+    </div>
+</body>
+</html>

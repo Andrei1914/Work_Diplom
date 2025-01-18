@@ -1,0 +1,24 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Оставить отзыв</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'add_review.css' %}">
+</head>
+<body>
+    {% include 'menu_page.html'%}
+    <h1 align="center">{{ info }}</h1>
+    <div class="review">
+        <h1>Оставить отзыв</h1>
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">Отправить отзыв</button>
+        </form>
+        {% if form.non_field_errors %}
+            <div style="color: red;">{{ form.non_field_errors }}</div>
+        {% endif %}
+    </div>
+</body>
+</html>

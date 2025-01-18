@@ -1,0 +1,45 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Услуги</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'services.css' %}">
+</head>
+<body>
+<section id="services" class="py-5">
+    {% include 'menu_page.html' %}
+    <main class="main">
+        <div class="main-title">Услуги косметолога по бровям и ресницам</div>
+            <div class="card-body">
+                <div class="card-title">Окрашивание бровей</div>
+                <div class="card-country">от 500₽</div>
+                <div class="card-time">10 - 15 мин</div>
+            </div>
+            <br/>
+        <div>
+            <div class="card-body">
+                <div class="card-title">Коррекция бровей</div>
+                <div class="card-country">от 500₽</div>
+                <div class="card-time">20 - 30 мин</div>
+            </div>
+            <br/>
+            <div class="card-body">
+                    <div class="card-title">Архитектура бровей</div>
+                    <div class="card-country">от 1100₽</div>
+                    <div class="card-time">35 - 45 мин</div>
+            </div>
+            <br/>
+            <div class="card-body">
+                    <div class="card-title">Наращивание ресниц</div>
+                    <div class="card-country">от 1200₽</div>
+                    <div class="card-time">30 - 40 мин</div>
+            </div
+            <br/>
+        </div>
+        <p align="center">{% include 'menu_service.html' %}</p>
+    </div>
+
+</body>
+</html>

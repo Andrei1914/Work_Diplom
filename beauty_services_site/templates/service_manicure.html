@@ -1,0 +1,48 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Услуги</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'services.css' %}">
+</head>
+<body>
+<section id="services" class="py-5">
+    {% include 'menu_page.html' %}
+    <main class="main">
+        <div class="main-title">Услуги маникюрного мастера</div>
+            <div class="card-body">
+                <div class="card-title">Наращивание</div>
+                <div class="card-country">от 750₽</div>
+                <div class="card-time">25 - 35 мин</div>
+            </div>
+            <br/>
+        <div>
+            <div class="card-body">
+                <div class="card-title">Дизайн одного ногтя</div>
+                <div class="card-country">от 20₽</div>
+                <div class="card-time">40 - 50 мин</div>
+            </div>
+            <br/>
+            <div class="card-body">
+                    <div class="card-title">Наращивание ногтей</div>
+                    <div class="card-country">от 1100₽</div>
+                    <div class="card-time">35 - 45 мин</div>
+            </div>
+            <br/>
+            <div class="card-body">
+                    <div class="card-title">Маникюр+гель лак</div>
+                    <div class="card-country">от 750₽</div>
+                    <div class="card-time">30 - 40 мин</div>
+            </div
+            <br/>
+            <div class="card-body">
+                    <div class="card-title">Педикюр полный с покрытием</div>
+                    <div class="card-country">от 1200₽</div>
+                    <div class="card-time">15 - 25 мин</div>
+            </div>
+        <p align="center">{% include 'menu_service.html' %}</p>
+        </div>
+</body>
+</html>
