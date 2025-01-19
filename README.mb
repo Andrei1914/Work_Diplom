@@ -66,10 +66,8 @@ python manage.py runserver
 - вклад
 
  Скриншоты бота
-! Гланая старница: images/beauty_site_main.png
-! Страница с просматриванием услуг: images/beauty_site_service.png
-! Страница с просматриванием вопросов и ответов: images/beauty_site_help.png
-! Страница с просматриванием отзывов: images/beauty_site_view.png
+! Гланая старница: images/bot_start.jpg
+! Выбор услуги и запись на число: images/bot_service.png
  Начало работы
 
 Эти инструкции помогут вам получить копию проекта на вашем локальном компьютере для разработки и тестирования.
