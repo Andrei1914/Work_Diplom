@@ -13,11 +13,11 @@
 - Лицензия лицензия
 
 Скриншоты сайта
-! Гланая старница: (images/beauty_site_main.png)
-! Страница с просматриванием услуг: (images/beauty_site_service.png)
-! Страница с просматриванием вопросов и ответов: (images/beauty_site_help.png)
-! Страница с просматриванием отзывов: (images/beauty_site_view.png)
-! Структура файлов: (images/Structure_site.png)
+! Гланая старница: images/beauty_site_main.png
+! Страница с просматриванием услуг: images/beauty_site_service.png
+! Страница с просматриванием вопросов и ответов: images/beauty_site_help.png
+! Страница с просматриванием отзывов: images/beauty_site_view.png
+! Структура файлов: images/Structure_site.png
 
 Начало работы
 
@@ -35,7 +35,7 @@
 
 1. Клонируйте репозиторий:
    ```bash
-   git clone https://github.com/Andrei1914/Work_Diplom/.git
+   git clone https://github.com/Andrei1914/Work_Diplom.git
 Перейдите в каталог проекта:
 cd beauty_services_site
 Создайте виртуальное окружение и активируйте его:
