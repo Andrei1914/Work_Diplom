@@ -27,7 +27,7 @@
             {% for example in examples %}
                     <h2>{{ example.title }}</h2>
                     <p>{{ example.description }}</p>
-                    <img src="{{ MEDIA_URL }}{{ example.image.url }}" alt="{{ example.title }}">
+                    <img src="{{ example.image.url }}" alt="{{ example.title }}">
                     <p>Дата: {{ example.date_publish }}</p>
             {% empty %}
                 <p>Нет примеров работ.</p>
